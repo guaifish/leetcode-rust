@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 
 /// Description: https://leetcode.com/problems/palindrome-number/
-/// functional solution: https://leetcode.com/problems/palindrome-number/discuss/333683/Rust-0ms-4ms
+/// Best Solution: https://leetcode.com/problems/palindrome-number/discuss/333683/Rust-0ms-4ms
 /// Runtime: 0 ms   Memory: 2.8 MB
 
 impl Solution {
