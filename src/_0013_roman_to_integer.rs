@@ -1,8 +1,7 @@
-#![allow(dead_code)]
-
 /// Description: https://leetcode.com/problems/roman-to-integer/
 /// Best Solution: https://leetcode.com/problems/roman-to-integer/discuss/374718/Rust-pattern-matching-without-extra-allocation
 /// My Solution: https://leetcode.com/problems/roman-to-integer/discuss/863979/Elegant-Rust-functional-solution-0ms-2.1MB
+use crate::Solution;
 
 impl Solution {
     pub fn roman_to_int(s: String) -> i32 {
@@ -22,31 +21,4 @@ impl Solution {
             }
         })
     }
-}
-
-struct Solution;
-
-#[test]
-fn example1() {
-    assert_eq!(Solution::roman_to_int("III".to_string()), 3);
-}
-
-#[test]
-fn example2() {
-    assert_eq!(Solution::roman_to_int("IV".to_string()), 4);
-}
-
-#[test]
-fn example3() {
-    assert_eq!(Solution::roman_to_int("IX".to_string()), 9);
-}
-
-#[test]
-fn example4() {
-    assert_eq!(Solution::roman_to_int("LVIII".to_string()), 58);
-}
-
-#[test]
-fn example5() {
-    assert_eq!(Solution::roman_to_int("MCMXCIV".to_string()), 1994);
 }

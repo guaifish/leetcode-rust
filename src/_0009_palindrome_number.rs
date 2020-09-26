@@ -1,8 +1,7 @@
-#![allow(dead_code)]
-
 /// Description: https://leetcode.com/problems/palindrome-number/
 /// Best Solution: https://leetcode.com/problems/palindrome-number/discuss/333683/Rust-0ms-4ms
 /// Runtime: 0 ms   Memory: 2.8 MB
+use crate::Solution;
 
 impl Solution {
     pub fn is_palindrome(x: i32) -> bool {
@@ -18,21 +17,4 @@ impl Solution {
             .zip(digits.rev().take(half))
             .all(|(lhs, rhs)| lhs == rhs)
     }
-}
-
-struct Solution;
-
-#[test]
-fn example1() {
-    assert_eq!(Solution::is_palindrome(121), true);
-}
-
-#[test]
-fn example2() {
-    assert_eq!(Solution::is_palindrome(-121), false);
-}
-
-#[test]
-fn example3() {
-    assert_eq!(Solution::is_palindrome(10), false);
 }
