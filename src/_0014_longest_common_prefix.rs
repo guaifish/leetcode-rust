@@ -4,15 +4,30 @@ use crate::Solution;
 
 impl Solution {
     pub fn longest_common_prefix(strs: Vec<String>) -> String {
-        match strs.is_empty() {
-            true => "".to_string(),
-            _ => strs.iter().skip(1).fold(strs[0].clone(), |acc, x| {
-                acc.chars()
-                    .zip(x.chars())
-                    .take_while(|(x, y)| x == y)
-                    .map(|(x, _)| x)
-                    .collect()
-            }),
+        if strs.is_empty() {
+            return String::new();
         }
+
+        if strs.len() == 1 {
+            return strs[0].clone();
+        }
+
+        let min_len = strs.iter().map(|x| x.len()).min().unwrap();
+        if min_len == 0 {
+            return String::new();
+        }
+
+        let mut i = 0;
+        let s0 = strs[0].as_bytes();
+        'o: while i < min_len {
+            for s in strs.iter().map(|s| s.as_bytes()).skip(1) {
+                if s[i] != s0[i] {
+                    break 'o;
+                }
+            }
+            i += 1;
+        }
+
+        String::from_utf8_lossy(&s0[..i]).to_string()
     }
 }
